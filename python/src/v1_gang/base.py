@@ -15,17 +15,20 @@ directions = [
 ]
 
 
+
 class Robot:
     """Base class for all robots"""
-    
+
+    shared_int = 0
+
     def setup(self):
         """Initialize the robot - call this instead of __init__"""
-        self.indicator_string = ""
         return self
     
     def init(self):
         """Called at the start of each turn - initialization logic"""
-        self.indicator_string = ""
+        self.indicator_string = f"id: {get_id()}, "
+        pass
     
     def cleanup(self):
         """Called at the end of each turn - final cleanup"""

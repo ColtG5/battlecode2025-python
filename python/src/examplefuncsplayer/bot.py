@@ -49,10 +49,10 @@ def run_tower():
     robot_type = random.randint(0, 2)
     if robot_type == 0 and can_build_robot(UnitType.SOLDIER, next_loc):
         build_robot(UnitType.SOLDIER, next_loc)
-        log("BUILT A SOLDIER")
+        # log("BUILT A SOLDIER")
     if robot_type == 1 and can_build_robot(UnitType.MOPPER, next_loc):
         build_robot(UnitType.MOPPER, next_loc)
-        log("BUILT A MOPPER")
+        # log("BUILT A MOPPER")
     if robot_type == 2 and can_build_robot(UnitType.SPLASHER, next_loc):
         set_indicator_string("SPLASHER NOT IMPLEMENTED YET");
         #build_robot(RobotType.SPLASHER, next_loc)
@@ -86,7 +86,7 @@ def run_soldier():
         should_mark = cur_ruin.get_map_location().subtract(dir)
         if sense_map_info(should_mark).get_mark() == PaintType.EMPTY and can_mark_tower_pattern(UnitType.LEVEL_ONE_PAINT_TOWER, target_loc):
             mark_tower_pattern(UnitType.LEVEL_ONE_PAINT_TOWER, target_loc)
-            log("Trying to build a tower at " + str(target_loc))
+            # log("Trying to build a tower at " + str(target_loc))
 
         # Fill in any spots in the pattern with the appropriate paint.
         for pattern_tile in sense_nearby_map_infos(target_loc, 8):
@@ -99,7 +99,7 @@ def run_soldier():
         if can_complete_tower_pattern(UnitType.LEVEL_ONE_PAINT_TOWER, target_loc):
             complete_tower_pattern(UnitType.LEVEL_ONE_PAINT_TOWER, target_loc)
             set_timeline_marker("Tower built", 0, 255, 0)
-            log("Built a tower at " + str(target_loc) + "!")
+            # log("Built a tower at " + str(target_loc) + "!")
 
     # Move and attack randomly if no objective.
     dir = directions[random.randint(0, len(directions) - 1)]
@@ -122,7 +122,7 @@ def run_mopper():
         move(dir)
     if can_mop_swing(dir):
         mop_swing(dir)
-        log("Mop Swing! Booyah!");
+        # log("Mop Swing! Booyah!");
     elif can_attack(next_loc):
         attack(next_loc)
 
