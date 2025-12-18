@@ -1,0 +1,1 @@
+# Map symmetry detection utilities
