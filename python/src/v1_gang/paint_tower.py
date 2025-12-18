@@ -3,8 +3,6 @@ from tower import Tower
 
 
 class Paint(Tower):
-    """Paint tower class"""
-    
     def setup(self):
         Tower.setup(self)
         return self

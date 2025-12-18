@@ -14,7 +14,6 @@ robot = None
 def turn():
     global robot
     
-    # Initialize robot on first turn
     if robot is None:
         robot_type = get_type()
         
@@ -30,7 +29,8 @@ def turn():
             robot = Defense().setup()
         elif robot_type == UnitType.LEVEL_ONE_PAINT_TOWER or robot_type == UnitType.LEVEL_TWO_PAINT_TOWER or robot_type == UnitType.LEVEL_THREE_PAINT_TOWER:
             robot = Paint().setup()
-    
+
+    robot.turn_count = robot.turn_count + 1
     robot.init()
     robot.before_turn()
     robot.run()

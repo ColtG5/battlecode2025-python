@@ -61,7 +61,8 @@ def run_tower():
     # Read incoming messages
     messages = read_messages()
     for m in messages:
-        log(f"Tower received message: '#{m.get_sender_id()}: {m.get_bytes()}'")
+        # log(f"Tower received message: '#{m.get_sender_id()}: {m.get_bytes()}'")
+        pass
 
     # TODO: can we attack other bots?
 

@@ -3,8 +3,6 @@ from tower import Tower
 
 
 class Money(Tower):
-    """Money tower class"""
-    
     def setup(self):
         Tower.setup(self)
         return self
